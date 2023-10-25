@@ -1,7 +1,11 @@
 package com.example.materialcardviewwithselectorbackground;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.StateListDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -18,8 +22,10 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         binding.card1.setOnClickListener(v -> {
             binding.card1.setChecked(!binding.card1.isChecked());
+            binding.card1.setStrokeWidth(binding.card1.isChecked() ? 20 : 0);
             Toast.makeText(this, "Card1", Toast.LENGTH_SHORT).show();
         });
 

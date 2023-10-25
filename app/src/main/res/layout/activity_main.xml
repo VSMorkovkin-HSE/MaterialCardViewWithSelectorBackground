@@ -6,14 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--
+    for change checkable state
+    set argument:
+    android:checkable="true"
+    app:cardBackgroundColor="@color/selector_card_view"
+
+    implement selector_card_view as selector
+    with items that represent colors with certain states
+    -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/selector_card_view"
         android:checkable="true"
+        app:cardBackgroundColor="@color/selector_card_view"
+        app:checkedIcon="@null"
         app:layout_constraintBottom_toTopOf="@+id/card2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -21,9 +31,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:text="Card1"
+            android:textAlignment="center"
             android:textColor="#a2af22" />
 
     </com.google.android.material.card.MaterialCardView>
@@ -34,8 +46,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/selector_card_view"
         android:checkable="true"
+        app:cardBackgroundColor="@drawable/selector_card_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -43,9 +55,11 @@
         app:layout_constraintTop_toBottomOf="@+id/card1">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:text="Card2"
+            android:textAlignment="center"
             android:textColor="#a2af22" />
 
     </com.google.android.material.card.MaterialCardView>
